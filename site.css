@@ -80,3 +80,9 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-
   .hero { padding-block: 40px 32px; }
   .cards { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Legal pages */
+.doc .summary { margin-top: 24px; background: var(--surface, #fff); border: 1px solid var(--rule, #e2ded6); border-radius: 6px; padding: 16px 18px; }
+.doc .summary p { margin-top: 0; }
+.doc ul { padding-left: 22px; display: grid; gap: 6px; }
+.doc code { font: 14px var(--font-mono, monospace); background: var(--rule); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
