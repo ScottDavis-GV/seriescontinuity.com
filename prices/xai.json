@@ -1,0 +1,116 @@
+{
+  "schema": 2,
+  "provider": "xai",
+  "updated": "2026-11-16",
+  "unit": "USD per million tokens",
+  "source": "Third-party trackers citing xAI's model docs (pages dated 2026-08 to 2026-11). Not read from xAI directly.",
+  "usage_notes": [
+    "usage.prompt_tokens INCLUDES cached tokens; subtract prompt_tokens_details.cached_tokens before pricing uncached input.",
+    "Check whether reasoning tokens are inside completion_tokens or reported separately for your model, and bill them as output.",
+    "A request of 200,000 prompt tokens or more is billed entirely at the higher tier.",
+    "Long-context rates for grok-4.7 are derived by doubling; the other models' were stated by a source."
+  ],
+  "modifiers": {
+    "priority_multiplier": 2.0
+  },
+  "models": {
+    "grok-4.7": {
+      "tiers": [
+        {
+          "max_prompt_tokens": 199999,
+          "input": 2,
+          "output": 6,
+          "cache_read": 0.5
+        },
+        {
+          "max_prompt_tokens": null,
+          "input": 4,
+          "output": 12,
+          "cache_read": 1.0
+        }
+      ]
+    },
+    "grok-4.6": {
+      "tiers": [
+        {
+          "max_prompt_tokens": 199999,
+          "input": 2,
+          "output": 6,
+          "cache_read": 0.5
+        },
+        {
+          "max_prompt_tokens": null,
+          "input": 4,
+          "output": 12,
+          "cache_read": 1.0
+        }
+      ]
+    },
+    "grok-4.5": {
+      "tiers": [
+        {
+          "max_prompt_tokens": 199999,
+          "input": 2,
+          "output": 6,
+          "cache_read": 0.3
+        },
+        {
+          "max_prompt_tokens": null,
+          "input": 4,
+          "output": 12,
+          "cache_read": 0.6
+        }
+      ]
+    },
+    "grok-4.3": {
+      "batch_multiplier": 0.8,
+      "tiers": [
+        {
+          "max_prompt_tokens": 199999,
+          "input": 1.25,
+          "output": 2.5,
+          "cache_read": 0.2
+        },
+        {
+          "max_prompt_tokens": null,
+          "input": 2.5,
+          "output": 5.0,
+          "cache_read": 0.4
+        }
+      ]
+    },
+    "grok-4.20-multi-agent": {
+      "batch_multiplier": 0.8,
+      "tiers": [
+        {
+          "max_prompt_tokens": 199999,
+          "input": 1.25,
+          "output": 2.5,
+          "cache_read": 0.2
+        },
+        {
+          "max_prompt_tokens": null,
+          "input": 2.5,
+          "output": 5.0,
+          "cache_read": 0.4
+        }
+      ]
+    },
+    "grok-build-0.1": {
+      "tiers": [
+        {
+          "max_prompt_tokens": 199999,
+          "input": 1,
+          "output": 2,
+          "cache_read": 0.2
+        },
+        {
+          "max_prompt_tokens": null,
+          "input": 2,
+          "output": 4,
+          "cache_read": 0.4
+        }
+      ]
+    }
+  }
+}

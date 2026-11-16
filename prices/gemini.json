@@ -1,0 +1,195 @@
+{
+  "schema": 2,
+  "provider": "gemini",
+  "updated": "2026-11-16",
+  "unit": "USD per million tokens",
+  "source": "https://ai.google.dev/gemini-api/docs/pricing and https://aistudio.google.com/docs/pricing (paid Standard tier, read 2026-11-16)",
+  "usage_notes": [
+    "usageMetadata.promptTokenCount INCLUDES cachedContentTokenCount; subtract it before pricing uncached input.",
+    "Output = candidatesTokenCount + thoughtsTokenCount; thinking tokens bill at the output rate.",
+    "Rates are for text, image and video input. Audio input costs more on several models.",
+    "Explicit caches also bill storage per hour (cache_storage_per_hour), which usage does not report per request.",
+    "A model's 'upcoming' entry replaces 'tiers' on its effective date."
+  ],
+  "modifiers": {
+    "batch_multiplier": 0.5,
+    "flex_multiplier": 0.5,
+    "priority_multiplier": 1.8
+  },
+  "models": {
+    "gemini-4-argon": {
+      "note": "Implicit caching only.",
+      "tiers": [
+        {
+          "max_prompt_tokens": null,
+          "input": 2,
+          "output": 10,
+          "cache_read": 0.1
+        }
+      ],
+      "upcoming": [
+        {
+          "effective": "2026-12-01",
+          "tiers": [
+            {
+              "max_prompt_tokens": null,
+              "input": 4,
+              "output": 20,
+              "cache_read": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    "gemini-3.8-flash": {
+      "cache_storage_per_hour": 0.5,
+      "tiers": [
+        {
+          "max_prompt_tokens": null,
+          "input": 0.75,
+          "output": 3.75,
+          "cache_read": 0.075
+        }
+      ],
+      "upcoming": [
+        {
+          "effective": "2027-01-01",
+          "cache_storage_per_hour": 1.0,
+          "tiers": [
+            {
+              "max_prompt_tokens": null,
+              "input": 1.5,
+              "output": 7.5,
+              "cache_read": 0.15
+            }
+          ]
+        }
+      ]
+    },
+    "gemini-3.6-flash": {
+      "cache_storage_per_hour": 0.5,
+      "tiers": [
+        {
+          "max_prompt_tokens": null,
+          "input": 0.75,
+          "output": 3.75,
+          "cache_read": 0.075
+        }
+      ],
+      "upcoming": [
+        {
+          "effective": "2027-01-01",
+          "cache_storage_per_hour": 1.0,
+          "tiers": [
+            {
+              "max_prompt_tokens": null,
+              "input": 1.5,
+              "output": 7.5,
+              "cache_read": 0.15
+            }
+          ]
+        }
+      ]
+    },
+    "gemini-3.5-flash": {
+      "cache_storage_per_hour": 1.0,
+      "tiers": [
+        {
+          "max_prompt_tokens": null,
+          "input": 1.5,
+          "output": 9,
+          "cache_read": 0.15
+        }
+      ]
+    },
+    "gemini-3.5-flash-lite": {
+      "cache_storage_per_hour": 1.0,
+      "tiers": [
+        {
+          "max_prompt_tokens": null,
+          "input": 0.3,
+          "output": 2.5,
+          "cache_read": 0.03
+        }
+      ]
+    },
+    "gemini-3.1-pro-preview": {
+      "cache_storage_per_hour": 4.5,
+      "tiers": [
+        {
+          "max_prompt_tokens": 200000,
+          "input": 2,
+          "output": 12,
+          "cache_read": 0.2
+        },
+        {
+          "max_prompt_tokens": null,
+          "input": 4,
+          "output": 18,
+          "cache_read": 0.4
+        }
+      ]
+    },
+    "gemini-3.1-flash-lite": {
+      "cache_storage_per_hour": 1.0,
+      "tiers": [
+        {
+          "max_prompt_tokens": null,
+          "input": 0.25,
+          "output": 1.5,
+          "cache_read": 0.025
+        }
+      ]
+    },
+    "gemini-3-flash-preview": {
+      "cache_storage_per_hour": 1.0,
+      "tiers": [
+        {
+          "max_prompt_tokens": null,
+          "input": 0.5,
+          "output": 3,
+          "cache_read": 0.05
+        }
+      ]
+    },
+    "gemini-2.5-pro": {
+      "cache_storage_per_hour": 4.5,
+      "tiers": [
+        {
+          "max_prompt_tokens": 200000,
+          "input": 1.25,
+          "output": 10,
+          "cache_read": 0.125
+        },
+        {
+          "max_prompt_tokens": null,
+          "input": 2.5,
+          "output": 15,
+          "cache_read": 0.25
+        }
+      ]
+    },
+    "gemini-2.5-flash": {
+      "cache_storage_per_hour": 1.0,
+      "tiers": [
+        {
+          "max_prompt_tokens": null,
+          "input": 0.3,
+          "output": 2.5,
+          "cache_read": 0.03
+        }
+      ]
+    },
+    "gemini-2.5-flash-lite": {
+      "cache_storage_per_hour": 1.0,
+      "tiers": [
+        {
+          "max_prompt_tokens": null,
+          "input": 0.1,
+          "output": 0.4,
+          "cache_read": 0.01
+        }
+      ]
+    }
+  }
+}
