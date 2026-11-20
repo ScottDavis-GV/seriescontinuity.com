@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your licence key · Series Continuity</title>
+<meta name="description" content="Your Series Continuity licence key, after you buy, renew or upgrade.">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css">
+</head>
+<!-- data-key-service: the licence key service's address (techniquest-keys). It
+     must match where the service is deployed, and the service's ALLOWED_ORIGINS
+     must include https://seriescontinuity.com. The same address is in the store
+     settings at the foot of index.html. -->
+<body data-key-service="https://keys.seriescontinuity.com">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="i-mark" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h3v18H6a2 2 0 0 1-2-2z"/><path d="M9 3h5v18H9"/><path d="M14 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M3 12h18"/></g>
+  </defs>
+</svg>
+
+<header class="wrap top">
+  <a class="brand" href="./"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mark"/></svg>Series Continuity</a>
+  <nav aria-label="Site">
+    <a href="./">Home</a>
+    <a href="./#pricing">Pricing</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="mailto:hello@techniquestassociates.com?subject=Series%20Continuity%20licence">Contact</a>
+  </nav>
+</header>
+
+<main class="wrap doc thanks">
+  <h1>Thank you</h1>
+
+  <p class="key-status" id="status" role="status" aria-live="polite">Getting your licence key…</p>
+
+  <section id="missing" hidden>
+    <p>This page shows your licence key after you buy, renew or upgrade Series Continuity. The link that brought you here has no order in it.</p>
+    <p>If you have just paid, write to <a href="mailto:hello@techniquestassociates.com?subject=Series%20Continuity%20licence">hello@techniquestassociates.com</a> with your receipt and we’ll send your key.</p>
+  </section>
+
+  <section id="held" hidden>
+    <p>Your payment went through, and we need to look at your order before your licence is ready. There is nothing you need to do: we’ll be in touch by email, at the address you gave at checkout.</p>
+    <p>If you have a question in the meantime, write to <a href="mailto:hello@techniquestassociates.com?subject=Series%20Continuity%20order">hello@techniquestassociates.com</a> with your receipt.</p>
+  </section>
+
+  <section id="licenses" hidden aria-label="Your licence keys"></section>
+
+  <section id="help" hidden>
+    <h2>Adding the key to Series Continuity</h2>
+    <ol>
+      <li>Open Series Continuity.</li>
+      <li>Go to <strong>General Settings → License</strong>.</li>
+      <li>Paste the key into <strong>Add a license key</strong> and choose <strong>Add key</strong>.</li>
+    </ol>
+    <p>A key works on up to three of your computers. To move it to another, remove it from the old one first, in the same place.</p>
+    <div class="summary">
+      <p><strong>Save this key now,</strong> for example in a password manager. It is shown on this page for 24 hours and is not emailed. If you lose it, write to <a href="mailto:hello@techniquestassociates.com?subject=Series%20Continuity%20licence">hello@techniquestassociates.com</a> with your licence ID or your receipt and we’ll send it again.</p>
+    </div>
+  </section>
+
+  <section id="renewal-help" hidden>
+    <h2>Getting your updated key</h2>
+    <p>For your security, a renewed or upgraded key is not shown here. Your copy of Series Continuity collects it, using the key it already has:</p>
+    <ol>
+      <li>Open Series Continuity on a computer where your licence is already set up.</li>
+      <li>Go to <strong>General Settings → License</strong>.</li>
+      <li>Choose <strong>Check for updated key</strong>.</li>
+    </ol>
+    <p>Do this on each of your computers. It doesn’t use up another computer. If your licence isn’t set up anywhere just now, write to <a href="mailto:hello@techniquestassociates.com?subject=Series%20Continuity%20renewal">hello@techniquestassociates.com</a> with your licence ID and receipt.</p>
+  </section>
+</main>
+
+<footer class="wrap site-foot">
+  <span>&copy; 2026 <a href="https://techniquestassociates.com/">TechniQuest Associates</a></span>
+  <nav aria-label="Footer"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms</a><a href="mailto:hello@techniquestassociates.com">hello@techniquestassociates.com</a></nav>
+</footer>
+
+<script>
+(() => {
+  const params = new URLSearchParams(location.search);
+  const local = ['localhost', '127.0.0.1'].includes(location.hostname);
+  // Only a copy served from this computer may point at another service, for testing.
+  const service = (local && params.get('service')) || document.body.dataset.keyService;
+  const session = params.get('session_id') || '';
+  const status = document.getElementById('status');
+  const list = document.getElementById('licenses');
+
+  const TIERS = { basic: 'Basic', advanced: 'Advanced' };
+  const CONTACT = 'hello@techniquestassociates.com';
+  // Stripe's notification can take a few seconds to reach the key service.
+  const WAIT_MS = 2000;
+  const GIVE_UP_AFTER = 30; // about a minute
+
+  function say(text) {
+    status.textContent = text;
+    status.hidden = !text;
+  }
+
+  function copyButton(textarea) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'btn';
+    button.textContent = 'Copy key';
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(textarea.value);
+        button.textContent = 'Copied';
+      } catch {
+        textarea.focus();
+        textarea.select();
+        button.textContent = 'Press Ctrl+C to copy';
+      }
+      setTimeout(() => { button.textContent = 'Copy key'; }, 2500);
+    });
+    return button;
+  }
+
+  function note(text) {
+    const p = document.createElement('p');
+    p.textContent = text;
+    return p;
+  }
+
+  const APPLIED = { renewal: 'Renewal applied', upgrade: 'Upgrade applied' };
+
+  function show(licenses) {
+    list.replaceChildren();
+    let keys = 0;
+    let applied = 0;
+    licenses.forEach((license, i) => {
+      const card = document.createElement('article');
+      card.className = 'key-card';
+      const title = document.createElement('h2');
+      title.textContent = `${license.product || 'Series Continuity'} ${TIERS[license.tier] || ''}`.trim();
+      const id = document.createElement('p');
+      id.className = 'key-id';
+      id.textContent = `Licence ID ${license.id}`;
+      card.append(title, id);
+      list.append(card);
+      if (typeof license.key === 'string') {
+        keys++;
+        const label = document.createElement('label');
+        label.className = 'key-label';
+        label.htmlFor = `key-${i}`;
+        label.textContent = 'Your licence key';
+        const text = document.createElement('textarea');
+        text.id = `key-${i}`;
+        text.className = 'key-text';
+        text.readOnly = true;
+        text.rows = 4;
+        text.spellcheck = false;
+        text.value = license.key;
+        text.addEventListener('focus', () => text.select());
+        card.append(label, text, copyButton(text));
+      } else if (license.bought === 'renewal' || license.bought === 'upgrade') {
+        // A renewal or upgrade comes without a key: the app collects it.
+        applied++;
+        card.append(note(`${APPLIED[license.bought]} to this licence.`));
+      } else if (license.blocked) {
+        card.append(note(`This licence has been turned off. If you think that is a mistake, write to ${CONTACT} with your licence ID.`));
+      } else {
+        // A purchase's key is shown for 24 hours after checkout.
+        card.append(note(`This key is no longer shown here. Write to ${CONTACT} with your licence ID or receipt and we will send it.`));
+      }
+    });
+    list.hidden = false;
+    document.getElementById('help').hidden = keys === 0;
+    document.getElementById('renewal-help').hidden = applied === 0;
+    say(
+      keys > 1
+        ? 'Here are your licence keys.'
+        : keys === 1
+          ? 'Here is your licence key.'
+          : applied
+            ? 'Your payment went through and has been applied to your licence.'
+            : 'Here is your order.',
+    );
+  }
+
+  function held() {
+    say('Your payment went through.');
+    document.getElementById('held').hidden = false;
+  }
+
+  async function fetchKeys(attempt) {
+    let response;
+    try {
+      response = await fetch(
+        `${service}/v1/order?session_id=${encodeURIComponent(session)}`,
+        { cache: 'no-store' },
+      );
+    } catch {
+      response = null;
+    }
+    if (response && response.ok) {
+      const body = await response.json().catch(() => null);
+      if (body && body.held === true) return held();
+      if (body && Array.isArray(body.licenses) && body.licenses.length) return show(body.licenses);
+    }
+    const pending = response && response.status === 404;
+    if ((pending || !response) && attempt < GIVE_UP_AFTER) {
+      say(attempt < 3 ? 'Getting your licence key…' : 'Your payment went through. Your key is on its way…');
+      return setTimeout(() => fetchKeys(attempt + 1), WAIT_MS);
+    }
+    say(
+      'Your payment went through, but your key could not be shown just now. ' +
+        `Refresh this page in a few minutes, or write to ${CONTACT} ` +
+        'with your receipt and we will send it.',
+    );
+  }
+
+  if (!/^cs_[A-Za-z0-9_]+$/.test(session)) {
+    say('');
+    document.getElementById('missing').hidden = false;
+  } else {
+    fetchKeys(0);
+  }
+})();
+</script>
+</body>
+</html>

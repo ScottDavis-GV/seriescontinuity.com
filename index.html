@@ -14,6 +14,9 @@
     <g id="i-mark" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h3v18H6a2 2 0 0 1-2-2z"/><path d="M9 3h5v18H9"/><path d="M14 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M3 12h18"/></g>
     <g id="i-book" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></g>
     <g id="i-check" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></g>
+    <g id="i-key" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3L20 3"/><path d="M16 7l3 3"/><path d="M14 9l2 2"/></g>
+    <g id="i-layers" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></g>
+    <g id="i-star" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9z"/></g>
     <g id="i-clock" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g>
   </defs>
 </svg>
@@ -23,6 +26,7 @@
   <nav aria-label="Site">
     <a href="./" aria-current="page">Home</a>
     <a href="#what">What it does</a>
+    <a href="#pricing">Pricing</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
     <a href="mailto:hello@techniquestassociates.com?subject=Series%20Continuity">Contact</a>
@@ -57,7 +61,83 @@
         <p>Your series bible stays on your own computer, with dated backups, a history of every change, and a way back to any of them.</p>
       </article>
     </div>
-    <p class="intro">Series Continuity is in development. It will be offered in Basic and Advanced editions, with a free trial.</p>
+    <p class="intro">Series Continuity is in development. It will be offered in <a href="#pricing">Basic and Advanced editions</a>, with a free trial.</p>
+  </section>
+
+  <section class="section" id="pricing" aria-labelledby="pricing-title">
+    <span class="eyebrow">Pricing</span>
+    <h2 id="pricing-title">Buy once. Keep it.</h2>
+    <p class="intro">Every licence is a one-time purchase, not a subscription, with a year of updates. Try every tool free for 14 days first.</p>
+    <p class="store-note" id="store-note">Series Continuity isn’t on sale yet. Prices will be set before it is. Until then, write to us to ask about the beta.</p>
+    <div class="plans">
+      <article class="plan">
+        <h3><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book"/></svg>Basic</h3>
+        <p class="price" data-price="basic">Price to come</p>
+        <p class="pitch">The series bible and the continuity tools.</p>
+        <ul>
+          <li>The series bible: characters, places, the timeline, objects, factions, secrets and the facts of your world</li>
+          <li>Maps of relationships, places, presence and the timeline, across every book</li>
+          <li>Adding chapters to the bible</li>
+          <li>Checking a new chapter against it</li>
+          <li>Asking the bible questions</li>
+          <li>Scene packs for drafting from it</li>
+        </ul>
+        <a class="btn quiet" data-buy="basic" data-beta-subject="Series Continuity beta: Basic" href="mailto:hello@techniquestassociates.com?subject=Series%20Continuity%20beta%3A%20Basic">Ask about the beta</a>
+      </article>
+      <article class="plan">
+        <h3><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-layers"/></svg>Advanced</h3>
+        <p class="price" data-price="advanced">Price to come</p>
+        <p class="pitch">Every tool in Series Continuity.</p>
+        <ul>
+          <li>Everything in Basic</li>
+          <li>Planning and readiness tools</li>
+          <li>Voice, point-of-view and prose checks</li>
+          <li>Whole-manuscript audits</li>
+          <li>Line editing, copy editing and proofreading</li>
+          <li>Research, and beta-reader copies and reports</li>
+          <li>Building the manuscript, ebook and print book</li>
+        </ul>
+        <a class="btn quiet" data-buy="advanced" data-beta-subject="Series Continuity beta: Advanced" href="mailto:hello@techniquestassociates.com?subject=Series%20Continuity%20beta%3A%20Advanced">Ask about the beta</a>
+      </article>
+      <article class="plan feat" id="founder">
+        <span class="tag">First 100</span>
+        <h3><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>Founder</h3>
+        <p class="price" data-price="founder">Price to come</p>
+        <p class="pitch">Advanced, at the Founder price, for the first 100 buyers.</p>
+        <ul>
+          <li>Everything in Advanced: the same licence and the same year of updates</li>
+          <li>Renews and works like any Advanced licence</li>
+          <li>Only the price is different</li>
+        </ul>
+        <p class="left" id="founder-left" role="status" aria-live="polite" hidden></p>
+        <a class="btn" data-buy="founder" data-beta-subject="Series Continuity beta: Founder" href="mailto:hello@techniquestassociates.com?subject=Series%20Continuity%20beta%3A%20Founder">Ask about the beta</a>
+      </article>
+    </div>
+    <ul class="facts">
+      <li><strong>A year of updates.</strong> Each licence includes every update released in the year after you buy it.</li>
+      <li><strong>When updates end, nothing stops.</strong> Series Continuity goes on working, for as long as you like, on every version released during your year.</li>
+      <li><strong>Renewing is up to you.</strong> A renewal adds another year of updates to a Basic or Advanced licence.</li>
+      <li><strong>Upgrade any time.</strong> A Basic licence can be upgraded to Advanced, with a year of Advanced updates from the day you upgrade.</li>
+      <li><strong>A 14-day free trial</strong> of every tool, started in the app: <strong>General Settings → License → Try every tool free</strong>. One trial per computer.</li>
+      <li><strong>Three computers per key.</strong> Remove a key from one computer to move it to another.</li>
+      <li><strong>Your work is never locked.</strong> Without a key, a project is read-only: you can still open it, read every entry, map and report, export it and back it up.</li>
+    </ul>
+  </section>
+
+  <section class="section" id="renew" aria-labelledby="renew-title">
+    <span class="eyebrow">Renew or upgrade</span>
+    <h2 id="renew-title">Another year, or every tool</h2>
+    <ol class="renew-steps">
+      <li>In Series Continuity, open <strong>General Settings → License</strong> and copy your licence ID (it starts <code>SC-</code>).</li>
+      <li>Choose the renewal or upgrade below, and paste the licence ID when the checkout asks for it.</li>
+      <li>Back in Series Continuity, choose <strong>Check for updated key</strong> in the same place. The app fetches your renewed or upgraded key; do this on each of your computers.</li>
+    </ol>
+    <div class="renew-links">
+      <a class="btn quiet" data-buy="basicRenewal" data-beta-subject="Series Continuity: Basic renewal" href="mailto:hello@techniquestassociates.com?subject=Series%20Continuity%3A%20Basic%20renewal">Renew Basic<span data-price-suffix="basicRenewal"></span></a>
+      <a class="btn quiet" data-buy="advancedRenewal" data-beta-subject="Series Continuity: Advanced renewal" href="mailto:hello@techniquestassociates.com?subject=Series%20Continuity%3A%20Advanced%20renewal">Renew Advanced<span data-price-suffix="advancedRenewal"></span></a>
+      <a class="btn quiet" data-buy="upgrade" data-beta-subject="Series Continuity: upgrade to Advanced" href="mailto:hello@techniquestassociates.com?subject=Series%20Continuity%3A%20upgrade%20to%20Advanced">Upgrade to Advanced<span data-price-suffix="upgrade"></span></a>
+    </div>
+    <p class="intro" id="renew-closed">Renewals and upgrades open when Series Continuity goes on sale. Until then, these buttons write to us.</p>
   </section>
 
   <section class="section" id="contact" aria-labelledby="contact-title">
@@ -71,5 +151,112 @@
   <span>© 2026 TechniQuest Associates</span>
   <nav aria-label="Footer"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms</a><a href="https://techniquestassociates.com/">TechniQuest Associates</a><a href="mailto:hello@techniquestassociates.com">hello@techniquestassociates.com</a></nav>
 </footer>
+<script>
+/* =====================================================================
+   STORE SETTINGS: the one place to set prices and Stripe Payment Links.
+   ---------------------------------------------------------------------
+   storeOpen  false = not on sale: every buy, renew and upgrade button
+              stays "Ask about the beta" (an email to us), and the
+              pricing section says it isn't on sale yet.
+              true  = on sale: each button whose link below is filled in
+              goes to that Stripe Payment Link. A button whose link is
+              still empty keeps writing to us.
+   prices     What each card and button shows, as written, e.g. "$49".
+              Leave "" to show "Price to come".
+   links      The Stripe Payment Link for each, e.g.
+              "https://buy.stripe.com/…". Every link must redirect after
+              payment to
+              https://seriescontinuity.com/thanks.html?session_id={CHECKOUT_SESSION_ID}
+              The renewal and upgrade links need the license_id custom
+              field (techniquest-keys user manual, section 5).
+   service    The licence key service (techniquest-keys). The Founder
+              card asks it how many Founder licences are left.
+   ===================================================================== */
+const STORE = {
+  storeOpen: false,
+  prices: {
+    basic: '',
+    advanced: '',
+    founder: '',
+    basicRenewal: '',
+    advancedRenewal: '',
+    upgrade: '',
+  },
+  links: {
+    basic: '',
+    advanced: '',
+    founder: '',
+    basicRenewal: '',
+    advancedRenewal: '',
+    upgrade: '',
+  },
+  service: 'https://keys.seriescontinuity.com',
+};
+/* ===================== end of store settings ======================== */
+
+(() => {
+  const params = new URLSearchParams(location.search);
+  const local = ['localhost', '127.0.0.1'].includes(location.hostname);
+  // Only a copy served from this computer may be pointed elsewhere, for testing:
+  // ?service=http://localhost:8787 and ?store=open.
+  const service = (local && params.get('service')) || STORE.service;
+  const open = STORE.storeOpen || (local && params.get('store') === 'open');
+  const isLink = (url) => /^https:\/\/\S+$/.test(url || '');
+
+  for (const el of document.querySelectorAll('[data-price]')) {
+    const price = STORE.prices[el.dataset.price];
+    if (price) {
+      el.textContent = price + ' ';
+      const once = document.createElement('span');
+      once.textContent = 'one time';
+      el.append(once);
+    }
+  }
+  for (const el of document.querySelectorAll('[data-price-suffix]')) {
+    const price = STORE.prices[el.dataset.priceSuffix];
+    el.textContent = price ? ` (${price})` : '';
+  }
+
+  const BUY_LABELS = {
+    basic: 'Buy Basic',
+    advanced: 'Buy Advanced',
+    founder: 'Buy Founder',
+  };
+  let anyOnSale = false;
+  for (const button of document.querySelectorAll('[data-buy]')) {
+    const which = button.dataset.buy;
+    const url = STORE.links[which];
+    if (!open || !isLink(url)) continue; // keeps the beta email it was written with
+    button.href = url;
+    if (BUY_LABELS[which]) button.textContent = BUY_LABELS[which];
+    anyOnSale = true;
+  }
+  document.getElementById('store-note').hidden = open && anyOnSale;
+  document.getElementById('renew-closed').hidden =
+    open && ['basicRenewal', 'advancedRenewal', 'upgrade'].every((k) => isLink(STORE.links[k]));
+
+  // How many Founder licences are left. If the service can't be reached, the
+  // card shows without a count.
+  const left = document.getElementById('founder-left');
+  const founderButton = document.querySelector('[data-buy="founder"]');
+  fetch(`${service}/v1/offers?product=series-continuity`, { cache: 'no-store' })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((body) => {
+      const f = body && body.founder;
+      if (!f || !Number.isInteger(f.left) || !Number.isInteger(f.limit)) return;
+      if (f.left <= 0) {
+        left.textContent = 'Sold out';
+        founderButton.textContent = 'Sold out';
+        founderButton.removeAttribute('href');
+        founderButton.setAttribute('aria-disabled', 'true');
+        founderButton.setAttribute('role', 'link');
+      } else {
+        left.textContent = `${f.left} of ${f.limit} left`;
+      }
+      left.hidden = false;
+    })
+    .catch(() => {});
+})();
+</script>
 </body>
 </html>

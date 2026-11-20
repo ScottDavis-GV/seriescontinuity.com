@@ -25,6 +25,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body { background: var(--paper); color: var(--ink); font: 17px/1.6 var(--font-body); margin: 0; }
 h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; margin: 0; }
 p { margin: 0; }
@@ -86,3 +87,41 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-
 .doc .summary p { margin-top: 0; }
 .doc ul { padding-left: 22px; display: grid; gap: 6px; }
 .doc code { font: 14px var(--font-mono, monospace); background: var(--rule); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
+
+/* ---------- Pricing ---------- */
+.plans { margin-top: 24px; display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; }
+.plan { position: relative; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+.plan.feat { border: 2px solid var(--accent); padding: 21px; }
+.plan .tag { position: absolute; top: 20px; right: 20px; }
+.plan h3 { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.plan h3 svg { width: 24px; height: 24px; color: var(--accent); flex: none; }
+.plan .price { font: 700 28px/1.15 var(--font-display); letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.plan .price span { font: 500 13px/1 var(--font-mono); letter-spacing: 0.02em; color: var(--ink-3); }
+.plan .pitch { color: var(--ink-2); }
+.plan ul { margin: 4px 0 0; padding-left: 20px; display: grid; gap: 6px; font-size: 15px; color: var(--ink-2); }
+.plan .left { font: 500 14px/1.4 var(--font-mono); color: var(--accent); }
+.plan .btn { margin-top: auto; text-align: center; }
+.btn.quiet:hover { background: var(--accent-soft); }
+.btn[aria-disabled="true"] { background: var(--rule); color: var(--ink-3); border-color: transparent; cursor: not-allowed; pointer-events: none; }
+.store-note { margin-top: 16px; background: var(--accent-soft); border-radius: 8px; padding: 14px 18px; color: var(--ink); max-width: 46rem; }
+.facts { margin-top: 20px; display: grid; gap: 8px; padding-left: 20px; color: var(--ink-2); max-width: 46rem; }
+.facts strong { color: var(--ink); }
+.renew-steps { margin-top: 14px; padding-left: 22px; display: grid; gap: 6px; color: var(--ink-2); max-width: 46rem; }
+.renew-links { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 900px) {
+  .plans { grid-template-columns: minmax(0, 1fr); max-width: 520px; }
+}
+
+/* ---------- Thank-you page: the licence keys after checkout ---------- */
+.thanks .key-status { margin-top: 12px; font-size: 18px; color: var(--ink); }
+.thanks ol { margin-top: 10px; color: var(--ink-2); padding-left: 22px; display: grid; gap: 6px; }
+#licenses { display: grid; gap: 16px; margin-top: 20px; }
+.key-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 20px 22px; display: grid; gap: 10px; }
+.doc .key-card h2 { margin-top: 0; }
+.doc .key-card p { margin-top: 0; }
+.key-id { font: 500 14px/1.4 var(--font-mono); color: var(--ink-2); }
+.key-label { font-size: 14px; color: var(--ink-3); }
+.key-text { width: 100%; min-width: 0; resize: none; font: 13px/1.5 var(--font-mono); color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 10px 12px; overflow-wrap: anywhere; word-break: break-all; }
+.key-text:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.key-card .btn { justify-self: start; cursor: pointer; border: 0; }
+.renew-steps code { font: 14px var(--font-mono); background: var(--rule); padding: 1px 5px; border-radius: 3px; }

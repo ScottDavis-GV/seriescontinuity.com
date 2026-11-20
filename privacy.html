@@ -27,10 +27,10 @@
 
 <main class="wrap doc">
   <h1>Privacy policy</h1>
-  <p class="updated">Effective 12 November 2026</p>
+  <p class="updated">Effective 20 November 2026</p>
 
   <div class="summary">
-    <p><strong>In short:</strong> Series Continuity runs on your computer, and your manuscripts and series bible are kept there, in folders you choose. When you run one of its AI tools, the text that tool needs is sent from your computer directly to the AI provider you have chosen, using your own account with that provider. We do not run a server that receives your writing, and there is no analytics or telemetry in the app or on this website.</p>
+    <p><strong>In short:</strong> Series Continuity runs on your computer, and your manuscripts and series bible are kept there, in folders you choose. When you run one of its AI tools, the text that tool needs is sent from your computer directly to the AI provider you have chosen, using your own account with that provider. We do not run a server that receives your writing, and there is no analytics or telemetry in the app or on this website. Payments are taken by Stripe, and licence keys are issued and checked by our own licence service, which is told your key and a one-way code for your computer, never anything about your series.</p>
   </div>
 
   <h2>Who we are</h2>
@@ -59,15 +59,26 @@
   <h2>What Series Continuity never does</h2>
   <ul>
     <li>No analytics, telemetry, crash reporting or advertising.</li>
-    <li>No server of ours receives your manuscripts, your series bible or your keys.</li>
+    <li>No server of ours receives your manuscripts, your series bible or your AI provider keys.</li>
     <li>We do not use your writing to train anything, and we do not sell, share or show it to anyone.</li>
   </ul>
 
   <h2>Licences and buying</h2>
-  <p>Series Continuity is in development and is not yet on sale. When it is, purchases will be handled by Lemon Squeezy as merchant of record, and the app will check licence keys with Lemon Squeezy's licence service. This policy will be updated to say exactly what is sent before that happens. Until then the app sends nothing to Lemon Squeezy.</p>
+  <p>Series Continuity is in development and is not yet on sale. When it is, this is how buying and licences work.</p>
+  <!-- CHECK: whether the Stripe account is Stripe Managed Payments (Stripe as merchant of record, handling sales tax) or a standard Stripe account; if Managed Payments, say so here and in terms.html. -->
+  <ul>
+    <li><strong>Paying.</strong> Payments are taken by <a href="https://stripe.com/privacy">Stripe</a>, on Stripe's own checkout page. You give Stripe your name, email address and payment details, and Stripe handles them under its privacy policy. We never see your card details. Stripe passes us your name and email address for your licence, and, for a renewal or upgrade, the licence ID you type in.</li>
+    <li><strong>Licence keys.</strong> Keys are issued and checked by TechniQuest Keys, our own licence service, which runs on Cloudflare. For each licence it keeps the licence ID, the edition, your name (which is written into the key and shown in the app as who it is licensed to), your email address (for support), until when updates are covered, a reference to the Stripe payment so that a refund can turn the key off, and the one-way codes of the computers the key is set up on.</li>
+    <li><strong>What the app sends.</strong> The app contacts the licence service when you add or remove a key, when you choose <strong>Check for updated key</strong>, and about once a week while a key is in use, to renew this computer's certificate for it. Each time it sends the key and a one-way code made from this computer's ID. It never sends the computer's name or its ID itself, and nothing about your series.</li>
+    <li><strong>A trial.</strong> Starting a free trial sends the licence service the email address you give and the same one-way code for this computer. The address is not checked or verified, is never written into a key, and is kept for support only. A record of the trial is kept so that each computer has one trial.</li>
+    <li><strong>Your network address.</strong> Like any server, the licence service sees your IP address when the app or this website contacts it. It uses it to limit how often it can be called and how many trials one network can start in a day. For trials it stores only a keyed one-way code of the address, which cannot be turned back into the address.</li>
+    <li><strong>The thank-you page.</strong> After you pay, the thank-you page on this website asks the licence service for your key, using the checkout's ID from Stripe. A new key is shown there for 24 hours. Keys are not emailed.</li>
+  </ul>
+  <!-- CHECK: how long Cloudflare keeps the service's logs (Workers Logs record failures, payment events and admin commands), and whether those logs hold IP addresses; add it here if it should be stated. -->
+  <p>We do not sell or share your name or email address, and we do not use them for marketing.</p>
 
   <h2>This website</h2>
-  <p>seriescontinuity.com has no cookies, analytics, tracking, advertising or third-party fonts or scripts. It is hosted on GitHub Pages, whose servers, like any web server, see your IP address to send you the page; see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</p>
+  <p>seriescontinuity.com has no cookies, analytics, tracking, advertising or third-party fonts or scripts. It is hosted on GitHub Pages, whose servers, like any web server, see your IP address to send you the page; see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>. The home page asks our licence service how many Founder licences are left, and the thank-you page asks it for your key; it sees your IP address as described above. The buy buttons take you to Stripe's checkout, which is under Stripe's privacy policy.</p>
 
   <h2>When you email us</h2>
   <p>If you write to us, we keep your message and address to reply and to keep a record of our conversation. If you ask to hear when Series Continuity is ready, we use your address for that and nothing else. We do not share your details with anyone.</p>
@@ -75,6 +86,7 @@
   <h2>Keeping and deleting your data</h2>
   <ul>
     <li>Everything the app keeps is on your computer and stays until you remove it: delete a series' folder, the backups folder, or the app's settings folder after uninstalling.</li>
+    <li>Your licence record is kept for as long as the licence exists, so that its keys keep working and we can help you with it. A trial's record is kept so that each computer gets one trial.<!-- CHECK: whether a trial's email address, or a licence's name and email, can be removed on request without breaking the one-trial-per-computer rule or the licence; say so here if it can. --></li>
     <li>To have us delete emails you have sent us, write to <a href="mailto:hello@techniquestassociates.com">hello@techniquestassociates.com</a>.</li>
     <li>For anything you have sent to an AI provider, ask that provider; we have no copy and no access.</li>
     <li>Depending on where you live, you may have rights to access, correct, delete or export your personal data, or to object to its use. Write to us and we will help.</li>
